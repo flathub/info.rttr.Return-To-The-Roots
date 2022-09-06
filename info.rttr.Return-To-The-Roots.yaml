@@ -1,6 +1,6 @@
 app-id: info.rttr.Return-To-The-Roots
 runtime: org.freedesktop.Platform
-runtime-version: '21.08'
+runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 command: s25client
 rename-desktop-file: s25rttr.desktop
