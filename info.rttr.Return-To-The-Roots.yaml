@@ -8,7 +8,8 @@ rename-icon: s25rttr
 rename-appdata-file: s25rttr.metainfo.xml
 finish-args:
   - --share=ipc
-  - --socket=x11
+  - --socket=wayland
+  - --socket=fallback-x11
   - --socket=pulseaudio
   - --share=network
   - --device=dri
