@@ -41,7 +41,7 @@ index 000000000..9947151c8
 +  </description>
 +  <launchable type="desktop-id">s25rttr.desktop</launchable>
 +  <screenshots>
-+    <screenshot>
++    <screenshot type="default">
 +      <image>https://www.siedler25.org/gallery/2015/2015.04.28_02.jpg</image>
 +    </screenshot>
 +    <screenshot>
@@ -75,4 +75,7 @@ index 000000000..9947151c8
 +    <release version="0.8.1" date="2015-07-31" />
 +    <release version="0.7.2" date="2015-07-31" />
 +  </releases>
++  <developer id="info.rttr">
++    <name>RttR Team</name>
++  </developer>
 +</component>
