@@ -13,7 +13,7 @@ new file mode 100644
 index 000000000..9947151c8
 --- /dev/null
 +++ b/tools/release/debian/s25rttr.metainfo.xml
-@@ -0,0 +1,62 @@
+@@ -0,0 +1,65 @@
 +<?xml version="1.0" encoding="UTF-8"?>
 +<component type="desktop-application">
 +  <id>info.rttr.Return-To-The-Roots</id>
