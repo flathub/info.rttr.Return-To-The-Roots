@@ -38,16 +38,6 @@ modules:
         tag: v11.3.0
         commit: 51efec4a4d3cb13da1af3487a194e676df52e23a
 
-  - name: SDL2 # static version not provided by the runtime
-    sources:
-    - type: archive
-      url: https://libsdl.org/release/SDL2-2.30.5.tar.gz
-      sha256: f374f3fa29c37dfcc20822d4a7d7dc57e58924d1a5f2ad511bfab4c8193de63b
-    buildsystem: cmake-ninja
-    builddir: true
-    config-opts:
-    - -DCMAKE_BUILD_TYPE=Release
-
   - name: miniupnpc
     buildsystem: cmake-ninja
     sources:
