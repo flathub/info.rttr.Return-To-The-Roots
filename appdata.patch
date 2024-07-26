@@ -13,7 +13,7 @@ new file mode 100644
 index 000000000..9947151c8
 --- /dev/null
 +++ b/tools/release/debian/s25rttr.metainfo.xml
-@@ -0,0 +1,65 @@
+@@ -0,0 +1,68 @@
 +<?xml version="1.0" encoding="UTF-8"?>
 +<component type="desktop-application">
 +  <id>info.rttr.Return-To-The-Roots</id>
@@ -36,7 +36,10 @@ index 000000000..9947151c8
 +      <li>Fog of war that shrouds the area when unexplored</li>
 +    </ul>
 +    <p>
-+      You will still need an original "The Settlers 2 Gold Edition" version to play Return To The Roots.
++      You will still need an original "The Settlers 2 Gold Edition" version to play Return To The Roots. Put the game data into:
++    </p>
++    <p>
++      <code>/home/<your_username>/.var/app/info.rttr.Return-To-The-Roots/.s25rttr/S2/</code>
 +    </p>
 +  </description>
 +  <launchable type="desktop-id">s25rttr.desktop</launchable>
