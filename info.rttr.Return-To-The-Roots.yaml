@@ -13,7 +13,7 @@ finish-args:
   - --socket=pulseaudio
   - --share=network
   - --device=dri
-  - --persist=.s25rttr
+  - --filesystem=~/.s25rttr
 cleanup:
   - '*.a'
   - '*.la'
