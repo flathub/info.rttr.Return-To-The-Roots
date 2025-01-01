@@ -1,6 +1,6 @@
 app-id: info.rttr.Return-To-The-Roots
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 command: s25client
 rename-desktop-file: s25rttr.desktop
@@ -23,27 +23,28 @@ modules:
   - name: boost
     buildsystem: simple
     build-commands:
-      - ./bootstrap.sh --prefix=${FLATPAK_DEST} --with-libraries=test,locale,iostreams,filesystem,program_options,regex,system,chrono
+      - ./bootstrap.sh --prefix=${FLATPAK_DEST} --with-libraries=test,locale,iostreams,filesystem,program_options,regex,system,chrono,nowide
       - ./b2 -j${FLATPAK_BUILDER_N_JOBS} install variant=release cxxstd=17 --layout=system
     sources:
-      - type: archive
-        url: https://boostorg.jfrog.io/artifactory/main/release/1.83.0/source/boost_1_83_0.tar.bz2
-        sha256: 6478edfe2f3305127cffe8caf73ea0176c53769f4bf1585be237eb30798c3b8e
-
-  - name: boost-nowide
-    buildsystem: cmake-ninja
-    sources:
       - type: git
-        url: https://github.com/boostorg/nowide.git
-        tag: v11.3.0
-        commit: 51efec4a4d3cb13da1af3487a194e676df52e23a
+        url: https://github.com/boostorg/boost.git
+        tag: boost-1.87.0
+        commit: c89e6267665516192015a9e40955e154466f4f68
+        x-data-checker:
+          - type: git
+            tag-pattern: ^boost-([\d.]+)$
 
   - name: miniupnpc
     buildsystem: cmake-ninja
+    subdir: miniupnpc
     sources:
-      - type: archive
-        sha256: 05b929679091b9921b6b6c1f25e39e4c8d1f4d46c8feb55a412aa697aee03a93
-        url: https://miniupnp.tuxfamily.org/files/miniupnpc-2.2.8.tar.gz
+      - type: git
+        url: https://github.com/miniupnp/miniupnp.git
+        tag: miniupnpc_2_2_8
+        commit: b55145ec095652289a59c33603f3abafee898273
+        x-data-checker:
+          - type: git
+            tag-pattern: ^miniupnpc_([\d_]+)$
 
   - name: s25client
     buildsystem: cmake-ninja
@@ -67,6 +68,9 @@ modules:
         url: https://github.com/Return-To-The-Roots/s25client.git
         tag: v0.9.5
         commit: 397f2b2315e997504d4958bfbdea0af815ce559a
+        x-data-checker:
+          - type: git
+            tag-pattern: ^v([\d.]+)$
       - type: patch
         path: appdata.patch
       - type: file
